@@ -1,14 +1,14 @@
 import React from 'react';
 import { useModal } from '../../hooks/useModal';
 import Main from './Main';
-import TestModal from './components/TestModal/TestModal';
+import MainModal from './components/TestModal/MainModal';
 
 const MainContainer = () => {
   const [modalOpen, openModal, closeModal] = useModal({ defaultOpen: false });
   return (
     <>
       <Main openModal={openModal} />
-      <TestModal open={modalOpen} onClose={closeModal} />
+      <MainModal open={modalOpen} onClose={closeModal} />
     </>
   );
 };

@@ -13,13 +13,12 @@
     height: auto;
     width: auto;
     background-color: rgb(14, 142, 173);
-    margin-top: 5px;
-    border-radius: 7px;
+    border-radius: 7px 7px 0 0;
     border-bottom: solid white 1px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 5px;
 }
 
@@ -35,8 +34,21 @@
 .logo {
     height: 25px;
 }
-
 .button {
-    height: 20px;
     opacity: 70%;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+.pages {
+    padding: 4px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end; 
+}
+
+.page {
+    padding: 4px;
 }

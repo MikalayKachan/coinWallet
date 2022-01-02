@@ -1,0 +1,9 @@
+.button {
+    
+    opacity: 70%;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+.button_scale {
+     transform: scale(0.94);
+ }

@@ -28,6 +28,11 @@ const Main = ({openModal}) => {
                 <img src={"https://s3.coinmarketcap.com/generated/sparklines/web/7d/2781/1027.svg"} />
                 <button onClick={openModal} className={styles.button}>Add to wallet</button>
             </div>
+            <div className={styles.pages}>
+                <div className={styles.page}>1</div>
+                <div className={styles.page}>2</div>
+                <div className={styles.page}>3</div>
+            </div>
         </div>
     )
 }

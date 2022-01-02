@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Header.module.css'
 
-const Header = () => {
+const Header = ({openModal}) => {
     return (
         <div className={styles.header}>
             <div className={styles.header2}>
@@ -22,7 +22,7 @@ const Header = () => {
             </div>
             
             <div className={styles.wallet}>
-                <img src={"https://орфографика.рф/800/600/https/www.pikpng.com/pngl/b/382-3820152_business-law-sale-department-icon-clipart.png"} className={styles.bag} />
+                <img onClick={openModal} src={"https://орфографика.рф/800/600/https/www.pikpng.com/pngl/b/382-3820152_business-law-sale-department-icon-clipart.png"} className={styles.bag} />
                 <div>134,32 USD +2,38 (1,80 %)</div>
             </div>
         </div>
