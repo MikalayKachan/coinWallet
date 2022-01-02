@@ -11,7 +11,7 @@ const Main = ({openModal}) => {
                     <div>bitcoin</div>
                 </div>
                 <div>47.352,10 USD</div>
-                <div>+1.50%</div>
+                <div>+1.70%</div>
                 <div>-6.50%</div>
                 <img src={"https://s3.coinmarketcap.com/generated/sparklines/web/7d/2781/1.svg"} />
                 <button onClick={openModal} className={styles.button}>Add to wallet</button>
