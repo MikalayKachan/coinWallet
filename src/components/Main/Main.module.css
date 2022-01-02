@@ -1,0 +1,42 @@
+.main {
+    height: 500px;
+    width: 100%;
+    background-color: rgb(14, 142, 173);
+    margin-top: 5px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.row {
+    height: auto;
+    width: auto;
+    background-color: rgb(14, 142, 173);
+    margin-top: 5px;
+    border-radius: 7px;
+    border-bottom: solid white 1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.main2 {
+    width: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    color: white
+}
+
+.logo {
+    height: 25px;
+}
+
+.button {
+    height: 20px;
+    opacity: 70%;
+}
