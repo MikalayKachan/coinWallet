@@ -4,3 +4,26 @@
     background-color: white;
     border: solid rgb(37, 37, 37) 1px;
 }
+
+.coinPart {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.basketButton{
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid black;
+    
+}
+
+.basket {
+    height: 18px;
+    padding-bottom: 3px;
+}

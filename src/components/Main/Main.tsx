@@ -1,22 +1,25 @@
 import React from "react";
-import styles from "./Main.module.css"
-import Button from "../shared/Button/Button"
+import { NavLink } from 'react-router-dom'
+import { CoinInfoType } from "../redux/headerReducer";
 import { AppStateType } from "../redux/store"
-import { NavLink } from 'react-router-dom';
+
+import Button from "../shared/Button/Button"
+
+import styles from "./Main.module.css"
+
 
 type MainPropsType = {
-    openModal: any
-    state: AppStateType
+    currentPage: number
+    coins: Array<CoinInfoType>
     onNextClick: () => void
     onPrevClick: () => void
-    /* currenPage: number */
-    pageNumber: string | undefined
+    onAddToWalletClick: (coinId: string | null) => void
+    onCoinClick: (id: string | null) => void
 }
 
-
-const Main = (props: MainPropsType) => {
-    let coinItems = props.state.main.coinsData.map(coin =>
-        <div className={styles.row}>
+const Main = ({ currentPage, coins, onNextClick, onPrevClick, onAddToWalletClick, onCoinClick }: MainPropsType) => {
+    const coinItems = coins.map(coin => 
+        <div key={coin.id} className={styles.row} onClick={()=>{onCoinClick(coin.id)}}>
             <div>{coin.rank}</div>
             <div className={styles.main2}>
                 <div>{coin.name}</div>
@@ -25,23 +28,20 @@ const Main = (props: MainPropsType) => {
             <div>{Number(coin.changePercent24Hr).toFixed(2)}%</div>
             <div>$ {coin.priceUsd ? Number(coin.priceUsd).toFixed(2) : ""}</div>
             <img src={"https://s3.coinmarketcap.com/generated/sparklines/web/7d/2781/1.svg"} />
-            <Button onClickHandler={props.openModal} />
+            <Button onClick={(event: any) =>{
+                event.stopPropagation()
+                onAddToWalletClick(coin.id)}} />
         </div>
     )
-
 
     return (
         <div className={styles.main}>
             {coinItems}
             <div className={styles.pages}>
                 <div className="btn-group btn-group-sm" role="group" aria-label="Basic outlined example">
-                    <NavLink to={`/${Number(props.pageNumber)> - 1}`}>
-                        <button onClick={() => props.onPrevClick} type="button" className="btn btn-outline-light" >Previous</button>
-                    </NavLink>
-                    <div className={styles.pageNumber}>{props.pageNumber}</div>
-                    <NavLink to={`/${Number(props.pageNumber) + 1}`}>
-                        <button onClick={() => props.onNextClick} type="button" className="btn btn-outline-light">Next</button>
-                    </NavLink>
+                    <button onClick={onPrevClick} type="button" className="btn btn-outline-light" >Previous</button>
+                    <div className={styles.pageNumber}>{currentPage}</div>
+                    <button onClick={onNextClick} type="button" className="btn btn-outline-light">Next</button>
                 </div>
             </div>
 

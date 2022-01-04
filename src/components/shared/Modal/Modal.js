@@ -21,7 +21,7 @@ const Modal = ({
     >
        
             <div className={styles.iconWrapper} onClick={onClose}>
-            <button type="button" class="btn-close" disabled aria-label="Close"/>
+            <button type="button" className="btn-close" disabled aria-label="Close"/>
             </div>
        
         {children}

@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
+import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
 import { useModal } from '../../hooks/useModal';
+
 import Header from './Header';
 import WalletModal from './components/WalletModal/WalletModal';
-import axios from 'axios';
+import {headerCoinsSelector} from "../redux/selectors"
 import { setCoinsAC } from '../redux/headerReducer';
-import { useDispatch, useSelector } from 'react-redux';
-import {testSelector} from "../redux/selectors"
 
 
 const HeaderContainer = () => {
@@ -17,14 +18,18 @@ const HeaderContainer = () => {
         })
     }, [])
        
-const state = useSelector(testSelector)
-console.log(state);
 
+
+    
+    //const someData = localStorage.getItem(NAME_OF_DATA);
+    //localStorage.setItem(NAME_OF_DATA, data);
+
+const coins = useSelector(headerCoinsSelector)
 
     const [modalOpen, openModal, closeModal] = useModal({ defaultOpen: false });
     return (
         <>
-            <Header openModal={openModal} state={state} />
+            <Header openModal={openModal} coins={coins} />
             <WalletModal open={modalOpen} onClose={closeModal} />
         </>
     );

@@ -1,0 +1,10 @@
+.coinInfo {
+        height: 500px;
+        width: 100%;
+        background-color: rgb(41, 182, 175);
+        margin-top: 5px;
+        border-radius: 7px;
+        display: flex;
+        flex-direction: column;
+        color: white;
+}
