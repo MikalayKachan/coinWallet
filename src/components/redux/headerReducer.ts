@@ -17,12 +17,21 @@ export type CoinInfoType = {
     vwap24Hr: string | null
     explorer: string | null
 }
+
+export type WalletStateType = {
+    id: string | null
+    symbol: string | null
+    name: string | null
+    priceUsd: string | null
+}
 export type HeaderStateType = {
     coinsData: Array<CoinInfoType>
+    walletState: Array<WalletStateType>
 }
 
 let initialState = {
-    coinsData: []
+    coinsData: [],
+    walletState:[]
 }
 
 const headerReducer = (headerState: HeaderStateType = initialState, action: SetCoinsActionType): HeaderStateType => {

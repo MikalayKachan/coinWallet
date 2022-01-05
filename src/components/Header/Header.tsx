@@ -9,13 +9,13 @@ type HeaderPropsType = {
 }
 
 const Header = ({openModal, coins}: HeaderPropsType) => {
-    let coinItems = coins.map(coin =>
+    const coinItems = coins.map(coin =>
         <div key={coin.id} className={styles.coinPart}>
             <div>{coin.name}</div>
             <div>1 {coin.symbol} = {coin.priceUsd ? Number(coin.priceUsd).toFixed(5) : ""} USD</div>
         </div>)
-    return (
 
+    return (
         <div className={styles.header}>
             <div className={styles.header2}>
                 {coinItems}

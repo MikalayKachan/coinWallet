@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from 'react-router-dom'
+
 import { CoinInfoType } from "../redux/headerReducer";
-import { AppStateType } from "../redux/store"
 
 import Button from "../shared/Button/Button"
 
@@ -44,9 +44,8 @@ const Main = ({ currentPage, coins, onNextClick, onPrevClick, onAddToWalletClick
                     <button onClick={onNextClick} type="button" className="btn btn-outline-light">Next</button>
                 </div>
             </div>
-
         </div>
     )
 }
 
-export default Main
+export default React.memo(Main)

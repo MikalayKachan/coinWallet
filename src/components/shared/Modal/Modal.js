@@ -19,11 +19,11 @@ const Modal = ({
         closeTimeoutMS={closeTimeoutMS}
         onRequestClose={onClose}
     >
-       
-            <div className={styles.iconWrapper} onClick={onClose}>
-            <button type="button" className="btn-close" disabled aria-label="Close"/>
-            </div>
-       
+
+        <div className={styles.iconWrapper} onClick={onClose}>
+            <button type="button" className="btn-close" disabled aria-label="Close" />
+        </div>
+
         {children}
     </ReactModal>
 );

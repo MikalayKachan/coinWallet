@@ -1,7 +1,9 @@
 import React from 'react';
+
 import Modal from '../../../shared/Modal/Modal';
-import styles from './MainModal.module.css';
 import Button from '../../../shared/Button/Button';
+
+import styles from './MainModal.module.css';
 
 
 const MainModal = ({ open, value, onClose, name, onInputChange, onConfirmClick}) => (
