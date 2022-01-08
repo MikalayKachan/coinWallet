@@ -1,45 +1,84 @@
 .header {
-    width: 100%;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgb(61, 60, 60);
-    border: solid black 1px;
-    border-radius: 7px;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(119, 119, 119);
+  border-radius: 7px;
 }
 
-.header2 {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.topCoinsInfo {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .coinPart {
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    font-weight: initial;
-    color: white;
-    border: solid rgb(121, 119, 119) 1px;
-    border-radius: 5px;
-    margin: 5px;
-    padding: 5px; 
-    background-color: rgb(80, 80, 79);
+  width: 230px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  font-weight: initial;
+  color: white;
+  border: solid rgb(121, 119, 119) 1px;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+  background-color: rgb(80, 80, 79);
 }
-.wallet{
-    margin: 15px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
+.wallet {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
 }
+
+.statistic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
 .bag {
-    height: 50px;
-    width: 50px;
-    margin-bottom: 10px;
+  height: 50px;
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.difference {
+  display: flex;
+  align-items: center;
+}
+
+.arrowIcon {
+  height: 15px;
+  padding: 0 3px 0 0;
+}
+
+.usdValue {
+  display: flex;
+  flex-flow: row nowrap;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: -10px;
+  transform: translateX(-100%);
+}
+
+.text {
+  margin-left: 5px;
+}
+
+.percents {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+  transform: translateX(100%);
 }
