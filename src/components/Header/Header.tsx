@@ -41,6 +41,7 @@ const Header = ({ coins, myProfit, openModal }: HeaderPropsType) => {
             src={
               'https://орфографика.рф/800/600/https/www.pikpng.com/pngl/b/382-3820152_business-law-sale-department-icon-clipart.png'
             }
+            alt="bag"
             className={styles.bag}
           />
 
@@ -48,6 +49,7 @@ const Header = ({ coins, myProfit, openModal }: HeaderPropsType) => {
             {delta !== 0 && (
               <img
                 src={delta > 0 ? arrowUp : arrowDown}
+                alt="progress"
                 className={styles.arrowIcon}
               />
             )}

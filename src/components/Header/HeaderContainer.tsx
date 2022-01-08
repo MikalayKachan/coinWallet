@@ -19,7 +19,7 @@ type WalletCoinType = {
   walletId: string | null;
 };
 
-type UpdatedWalletCoinType = {
+export type UpdatedWalletCoinType = {
   id: string | null;
   name: string | null;
   symbol: string | null;
@@ -74,8 +74,7 @@ const HeaderContainer = () => {
       axios
         .get(`https://api.coincap.io/v2/assets?ids=${coinsIds}`)
         .then((response) => {
-          const walletCurrency: Array<WalletCurrencyType> | null =
-            response.data.data;
+          const walletCurrency: Array<WalletCurrencyType> = response.data.data;
 
           if (walletCurrency) {
             const nextWallet = walletCoin.map((coin) => ({

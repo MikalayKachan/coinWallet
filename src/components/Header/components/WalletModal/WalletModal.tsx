@@ -1,10 +1,23 @@
 import React from 'react';
 
 import Modal from '../../../shared/Modal/Modal';
+import { UpdatedWalletCoinType } from '../../HeaderContainer';
 
 import styles from './WalletModal.module.css';
 
-const WalletModal = ({ open, myWallet, onClose, onDeleteClick }) => {
+type WalletModalPropsType = {
+  open: boolean | ((modalData: any) => void) | null;
+  myWallet: Array<UpdatedWalletCoinType> | undefined;
+  onClose: boolean | ((modalData: any) => void) | null;
+  onDeleteClick: (walletId: string | null) => void;
+};
+
+const WalletModal = ({
+  open,
+  myWallet,
+  onClose,
+  onDeleteClick,
+}: WalletModalPropsType) => {
   const index =
     myWallet &&
     myWallet.map((coin, index) => (
@@ -37,7 +50,7 @@ const WalletModal = ({ open, myWallet, onClose, onDeleteClick }) => {
     myWallet &&
     myWallet.map((coin) => (
       <div key={coin.walletId} className={styles.main}>
-        {coin.usdCurrentValue.toFixed(2)}
+        {coin.usdCurrentValue?.toFixed(2)}
       </div>
     ));
   const button =
@@ -52,6 +65,7 @@ const WalletModal = ({ open, myWallet, onClose, onDeleteClick }) => {
             src={
               'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Linearicons_trash.svg/1024px-Linearicons_trash.svg.png'
             }
+            alt="delete"
             className={styles.basket}
           />
         </button>
