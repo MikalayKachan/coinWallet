@@ -7,11 +7,7 @@ import CoinInfo, { CoinInfoType } from './CoinInfo';
 
 export type DataToChartItemType = {
   priceUsd: string;
-  time: number;
-};
-
-export type DataToChartType = {
-  data: Array<DataToChartItemType>;
+  time: string;
 };
 
 export type DedaultOptionsType = typeof defaultOptions | undefined;
@@ -58,14 +54,16 @@ const CoinInfoContainer = () => {
         .get(`https://api.coincap.io/v2/assets/${coinId}/history?interval=d1`)
         .then((response) => {
           const data: Array<DataToChartItemType> = response.data.data;
-          const dataToChart = data.map((e) => Number(e.priceUsd));
-          const dataToY = data.map((e) =>
+          const dataToChart: Array<number> = data.map((e) =>
+            Number(e.priceUsd),
+          );
+          const dataToX: Array<string> = data.map((e) =>
             new Date(e.time).toLocaleDateString(),
           );
 
           const optionsForGraph = {
             ...defaultOptions,
-            categories: dataToY,
+            xAxis: { categories: dataToX },
             series: [{ data: dataToChart }],
           };
 
