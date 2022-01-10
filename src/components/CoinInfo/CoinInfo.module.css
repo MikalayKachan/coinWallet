@@ -1,10 +1,28 @@
 .coinInfo {
-        height: 500px;
-        width: 100%;
-        background-color: rgb(41, 182, 175);
-        margin-top: 5px;
-        border-radius: 7px;
-        display: flex;
-        flex-direction: column;
-        color: white;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgb(98, 219, 213);
+  margin-top: 5px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  color: white;
 }
+
+.info{  
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .chart {
+  background-color: rgb(98, 219, 213);
+  margin: auto;
+  opacity: 100%;
+  color: rgb(39, 39, 39);
+}
+ */

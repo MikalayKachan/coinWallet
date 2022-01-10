@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useModal } from '../../hooks/useModal';
@@ -11,45 +11,59 @@ import { mainCoinsSelector } from '../redux/selectors';
 import MainModalContainer from './components/MainModal/MainModal.container';
 import Main from './Main';
 
-
 const MainContainer = () => {
-  const history = useHistory()
-  const dispatch = useDispatch()
-  const coins = useSelector(mainCoinsSelector)
-  const { pageNumber } = useParams()
-  const [modalOpen, openModal, closeModal, modalData] = useModal({ defaultOpen: false });
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const coins = useSelector(mainCoinsSelector);
+  const { pageNumber } = useParams();
 
-  const currentPage = Number(pageNumber)
-  if (!pageNumber) { history.replace("/1") }
+  const [modalOpen, openModal, closeModal, modalData] = useModal({
+    defaultOpen: false,
+  });
+
+  const currentPage = Number(pageNumber);
 
   useEffect(() => {
-    axios.get(`https://api.coincap.io/v2/assets?limit=5&offset=${(currentPage - 1) * 5}`)
-      .then(response => {
-        dispatch(setCoinsForMainAC(response.data.data))
-      })
-      .catch(error => console.log(error))
-  }, [pageNumber])
+    if (!pageNumber) {
+      navigate('/1', { replace: true });
+    }
+
+    if (pageNumber) {
+      axios
+        .get(
+          `https://api.coincap.io/v2/assets?limit=7&offset=${
+            (currentPage - 1) * 7
+          }`,
+        )
+        .then((response) => {
+          dispatch(setCoinsForMainAC(response.data.data));
+        })
+        .catch((error) => console.log(error));
+    }
+  }, [pageNumber]);
 
   const handlePrevClick = () => {
     if (currentPage > 1) {
-      history.push(`/${currentPage - 1}`)
+      navigate(`/${currentPage - 1}`);
     }
-  }
+  };
 
   const handleNextClick = () => {
-    history.push(`/${currentPage + 1}`)
-  }
+    navigate(`/${currentPage + 1}`);
+  };
 
   const handleCoinClick = (id: string | null) => {
-    history.push(`/coin/${id}`)
-  }
+    navigate(`/coin/${id}`);
+  };
 
   const handleAddToWalletClick = (coinId: string | null) => {
-    const coinInfo = coins.find((coin: { id: string | null; }) => coin.id === coinId)
-  
+    const coinInfo = coins.find(
+      (coin: { id: string | null }) => coin.id === coinId,
+    );
+
     //@ts-ignore
-    openModal(coinInfo)
-  }
+    openModal(coinInfo);
+  };
 
   return (
     <>
@@ -61,7 +75,12 @@ const MainContainer = () => {
         onAddToWalletClick={handleAddToWalletClick}
         onCoinClick={handleCoinClick}
       />
-      <MainModalContainer open={modalOpen} onClose={closeModal} modalData={modalData}/>
+      <MainModalContainer
+        open={modalOpen}
+        //@ts-ignore
+        onClose={closeModal}
+        modalData={modalData}
+      />
     </>
   );
 };

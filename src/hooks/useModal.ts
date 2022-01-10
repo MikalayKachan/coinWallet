@@ -2,19 +2,19 @@ import { useState } from 'react';
 
 export const useModal = ({ defaultOpen = false, defaultData = null }) => {
   const [open, setOpen] = useState(defaultOpen);
-  const [data, setData] = useState(defaultData); 
+  const [data, setData] = useState(defaultData);
 
-  const openModal = (modalData) => {
+  const openModal = (modalData: any) => {
     setOpen(true);
 
-    if (modalData) {   
+    if (modalData) {
       setData(modalData);
     }
   };
 
   const closeModal = () => {
     setOpen(false);
-    setData(defaultData); 
+    setData(defaultData);
   };
 
   return [open, openModal, closeModal, data];
