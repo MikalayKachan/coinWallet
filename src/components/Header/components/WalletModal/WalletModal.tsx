@@ -6,9 +6,9 @@ import { UpdatedWalletCoinType } from '../../HeaderContainer';
 import styles from './WalletModal.module.css';
 
 type WalletModalPropsType = {
-  open: boolean | ((modalData: any) => void) | null;
+  open: boolean;
   myWallet: Array<UpdatedWalletCoinType> | undefined;
-  onClose: boolean | ((modalData: any) => void) | null;
+  onClose:  () => void;
   onDeleteClick: (walletId: string | null) => void;
 };
 
@@ -18,6 +18,7 @@ const WalletModal = ({
   onClose,
   onDeleteClick,
 }: WalletModalPropsType) => {
+  
   const index =
     myWallet &&
     myWallet.map((coin, index) => (

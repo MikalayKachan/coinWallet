@@ -14,7 +14,7 @@ export type DedaultOptionsType = typeof defaultOptions | undefined;
 
 const defaultOptions = {
   title: {
-    text: 'Dynamic of the year',
+    text: 'Dynamics of the year',
     style: { color: '#62dbd5', fontSize: '18px' },
   },
   chart: {

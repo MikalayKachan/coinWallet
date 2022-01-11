@@ -1,10 +1,20 @@
 import { useState } from 'react';
+import { CoinForMainContainerInfoType } from '../components/Main/MainContainer';
 
-export const useModal = ({ defaultOpen = false, defaultData = null }) => {
-  const [open, setOpen] = useState(defaultOpen);
-  const [data, setData] = useState(defaultData);
+type UseModalType = {
+  open: boolean;
+  openModal: (data?: CoinForMainContainerInfoType | undefined) => void;
+  closeModal: () => void;
+  data: CoinForMainContainerInfoType;
+};
 
-  const openModal = (modalData: any) => {
+export const useModal = (): UseModalType => {
+  const [open, setOpen] = useState<boolean>(false);
+  const [data, setData] = useState<CoinForMainContainerInfoType>(
+    {} as CoinForMainContainerInfoType,
+  );
+
+  const openModal = (modalData?: CoinForMainContainerInfoType | undefined) => {
     setOpen(true);
 
     if (modalData) {
@@ -14,8 +24,8 @@ export const useModal = ({ defaultOpen = false, defaultData = null }) => {
 
   const closeModal = () => {
     setOpen(false);
-    setData(defaultData);
+    setData({} as CoinForMainContainerInfoType);
   };
 
-  return [open, openModal, closeModal, data];
+  return { open, openModal, closeModal, data };
 };

@@ -1,0 +1,85 @@
+.header {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(119, 119, 119);
+  border-radius: 7px;
+
+  &__topCoinsInfo {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__coinPart {
+    width: 230px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    font-weight: initial;
+    color: white;
+    border: solid rgb(121, 119, 119) 1px;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    background-color: rgb(80, 80, 79);
+  }
+
+  &__wallet {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+  }
+
+  &__statistic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  &__bag {
+    height: 50px;
+    width: 50px;
+    margin-bottom: 10px;
+  }
+
+  &__difference {
+    display: flex;
+    align-items: center;
+  }
+
+  &__arrowIcon {
+    height: 15px;
+    padding: 0 3px 0 0;
+  }
+
+  &__text {
+    margin-left: 5px;
+  }
+
+  &__usdValue {
+    display: flex;
+    flex-flow: row nowrap;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    transform: translateX(-100%);
+  }
+
+  &__percents {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    transform: translateX(100%);
+  }
+}
