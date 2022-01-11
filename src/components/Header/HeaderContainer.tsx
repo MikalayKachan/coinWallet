@@ -7,7 +7,7 @@ import { useModal } from '../../hooks/useModal';
 import { headerCoinsSelector } from '../redux/selectors';
 import { setCoinsAC } from '../redux/headerReducer';
 
-import Header from './Header.copy';
+import Header from './Header';
 import WalletModalContainer from './components/WalletModal/WalletModal.container';
 
 type WalletCoinType = {
