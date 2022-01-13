@@ -48,8 +48,10 @@ const HeaderContainer = () => {
   const dispatch = useDispatch();
   const coins = useSelector(headerCoinsSelector);
 
-  let localWallet = localStorage.getItem('myWallet')
-  const walletCoin: Array<WalletCoinType> = localWallet ? JSON.parse(localWallet) : []
+  let localWallet = localStorage.getItem('myWallet');
+  const walletCoin: Array<WalletCoinType> = localWallet
+    ? JSON.parse(localWallet)
+    : [];
 
   const [myWallet, setMyWallet] = useState<
     Array<UpdatedWalletCoinType> | undefined
