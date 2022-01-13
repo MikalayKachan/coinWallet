@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/coinWallet/static/css/main.de09e041.css",
-    "main.js": "/coinWallet/static/js/main.25461c82.js",
+    "main.js": "/coinWallet/static/js/main.0faed75f.js",
     "static/js/787.b72926fa.chunk.js": "/coinWallet/static/js/787.b72926fa.chunk.js",
     "index.html": "/coinWallet/index.html",
     "main.de09e041.css.map": "/coinWallet/static/css/main.de09e041.css.map",
-    "main.25461c82.js.map": "/coinWallet/static/js/main.25461c82.js.map",
+    "main.0faed75f.js.map": "/coinWallet/static/js/main.0faed75f.js.map",
     "787.b72926fa.chunk.js.map": "/coinWallet/static/js/787.b72926fa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.de09e041.css",
-    "static/js/main.25461c82.js"
+    "static/js/main.0faed75f.js"
   ]
 }
