@@ -11,7 +11,7 @@
 }
 
 .header {
-  margin: 5px;
+  margin: 15px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -34,6 +34,7 @@
 }
 
 .row {
+  min-height: 50px;
   height: auto;
   width: auto;
   background-color: rgb(71, 199, 231);
@@ -43,7 +44,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  margin: 5px;
+
   cursor: pointer;
 }
 

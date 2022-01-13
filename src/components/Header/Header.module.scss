@@ -15,8 +15,8 @@
   }
 
   &__coinPart {
-    width: 230px;
-    height: 50px;
+    max-width: 230px;
+    max-height: 50px;
     display: flex;
     flex-direction: column;
     text-align: center;
