@@ -6,10 +6,10 @@ import Button from '../../../shared/Button/Button';
 import styles from './MainModal.module.css';
 
 type MainModalPropsType = {
-  open: boolean | ((modalData: string | null) => void) | null;
+  open: boolean;
   value: string;
   onClose: () => void;
-  name: string;
+  name: string | null;
   onInputChange: (inputValue: number) => void;
   onConfirmClick: () => void;
 };

@@ -4,10 +4,10 @@ import { UpdatedWalletCoinType } from '../../HeaderContainer';
 import WalletModal from './WalletModal';
 
 type WalletModalContainerPropsType = {
-  open: boolean | ((modalData: any) => void) | null;
+  open: boolean;
   myWallet: Array<UpdatedWalletCoinType> | undefined;
-  onClose: boolean | ((modalData: any) => void) | null;
-  setMyWallet: (nextWalletData: any) => void;
+  onClose: () => void;
+  setMyWallet: (nextWalletData: Array<UpdatedWalletCoinType>) => void;
 };
 
 const WalletModalContainer = ({

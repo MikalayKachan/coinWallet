@@ -1,9 +1,23 @@
 import React from 'react';
-import ReactModal from 'react-modal'; //почитать
+import ReactModal from 'react-modal';
 import styles from './Modal.module.scss';
 import cn from 'classnames';
 
-const Modal = ({ open, children, onClose, closeTimeoutMS, className }) => (
+type ModalParamsType = {
+  open: boolean;
+  children: React.ReactNode;
+  onClose: () => void;
+  closeTimeoutMS: number;
+  className: string;
+};
+
+const Modal = ({
+  open,
+  children,
+  onClose,
+  closeTimeoutMS,
+  className,
+}: ModalParamsType) => (
   <ReactModal
     portalClassName={styles.portal}
     overlayClassName={styles.overlay}

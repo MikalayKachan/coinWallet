@@ -49,7 +49,7 @@ const HeaderContainer = () => {
   const coins = useSelector(headerCoinsSelector);
 
   const walletCoin: Array<WalletCoinType> = JSON.parse(
-    localStorage.getItem('myWallet') || '[]',
+    localStorage.getItem('myWallet') || '',
   );
 
   const [myWallet, setMyWallet] = useState<
@@ -59,7 +59,7 @@ const HeaderContainer = () => {
     initialValue: 0,
     currentValue: 0,
   });
-  const [modalOpen, openModal, closeModal] = useModal({ defaultOpen: false });
+  const { open, openModal, closeModal } = useModal();
 
   useEffect(() => {
     axios.get('https://api.coincap.io/v2/assets?limit=3').then((response) => {
@@ -101,13 +101,13 @@ const HeaderContainer = () => {
           }
         });
     }
-  }, [modalOpen]);
+  }, [open]);
 
   return (
     <>
       <Header coins={coins} myProfit={myProfit} openModal={openModal} />
       <WalletModalContainer
-        open={modalOpen}
+        open={open}
         myWallet={myWallet}
         setMyWallet={setMyWallet}
         onClose={closeModal}

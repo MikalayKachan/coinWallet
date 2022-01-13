@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { v4 as uuid } from 'uuid';
+import { CoinForMainContainerInfoType } from '../../MainContainer';
 
 import MainModal from './MainModal';
 
 type MainModalContainerPropsType = {
-  open: boolean | ((modalData: any) => void) | null;
+  open: boolean;
   onClose: () => void;
-  modalData: any;
+  modalData: CoinForMainContainerInfoType;
 };
 
 const MainModalContainer = ({
@@ -22,7 +23,7 @@ const MainModalContainer = ({
   const valueToRender = convertedValue.toFixed(2);
 
   const handleInputChange = (inputValue: number) => {
-    const nextConvertedValue = inputValue * priceUsd;
+    const nextConvertedValue = inputValue * Number(priceUsd);
 
     setInputValue(inputValue);
     setConvertedValue(nextConvertedValue);
