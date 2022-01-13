@@ -45,7 +45,7 @@ const MainContainer = () => {
       axios
         .get(
           `https://api.coincap.io/v2/assets?limit=7&offset=${
-            (currentPage?? 1 - 1) * 7
+            (currentPage - 1) * 7
           }`,
         )
         .then((response) => {
