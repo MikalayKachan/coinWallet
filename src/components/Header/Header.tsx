@@ -61,7 +61,7 @@ const Header = ({ coins, myProfit, openModal }: HeaderPropsType) => {
             <div className={styles.header_text}>USD</div>
           </div>
           <div className={styles.header__percents}>
-            {Math.abs(percents).toFixed(2)}%
+            {percents ? Math.abs(percents).toFixed(2) : 0}%
           </div>
         </div>
       </div>
